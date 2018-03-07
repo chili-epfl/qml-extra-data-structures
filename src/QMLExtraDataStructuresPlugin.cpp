@@ -24,6 +24,8 @@
 
 #include "QMLExtraDataStructuresPlugin.h"
 
-void QMLExtraDataStructuresPlugin::registerTypes(const char* uri){
+#include "CircularBuffer.h"
 
+void QMLExtraDataStructuresPlugin::registerTypes(const char* uri){
+    qmlRegisterType<CircularBuffer>(uri, 1, 0, "CircularBuffer");
 }

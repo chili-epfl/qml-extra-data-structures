@@ -16,10 +16,12 @@ TARGET = $$qtLibraryTarget($$TARGET)
 uri = QMLExtraDataStructures
 
 HEADERS += \
-    src/QMLExtraDataStructuresPlugin.h
+    src/QMLExtraDataStructuresPlugin.h \
+    src/CircularBuffer.h
 
 SOURCES += \
-    src/QMLExtraDataStructuresPlugin.cpp
+    src/QMLExtraDataStructuresPlugin.cpp \
+    src/CircularBuffer.cpp
 
 OTHER_FILES += qmldir
 
