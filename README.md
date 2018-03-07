@@ -18,6 +18,6 @@ build
 
 This will install the QML plugin inside the Qt sysroot. **Be aware that this is not a sandboxed installation.**
 
-See [samples/](samples/) for example uses (coming soon).
+See [samples/](samples/) for example uses.
 
 See [DOCUMENTATION.md](DOCUMENTATION.md) for the API.

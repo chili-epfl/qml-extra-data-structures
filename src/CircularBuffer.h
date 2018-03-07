@@ -34,7 +34,7 @@ class CircularBuffer : public QQuickItem {
     Q_OBJECT
     /* *INDENT-ON* */
     Q_PROPERTY(int size READ getSize WRITE setSize NOTIFY sizeChanged)
-    Q_PROPERTY(int numElements READ getNumElements NOTIFY numElementsChanged)
+    Q_PROPERTY(QVariantList elements READ getElements NOTIFY elementsChanged)
 
 public:
 
@@ -65,11 +65,11 @@ public:
     void setSize(int newSize);
 
     /**
-     * @brief Gets the current number of elements in the buffer
+     * @brief Gets the copy of the current list of elements in the buffer
      *
-     * @return Current number of elements in the buffer
+     * @return Current list of elements in the buffer
      */
-    int getNumElements() const { return buffer.size(); }
+    QVariantList getElements() const { return buffer; }
 
 public slots:
 
@@ -109,9 +109,9 @@ signals:
     void sizeChanged();
 
     /**
-     * @brief Emitted when the current number of elements change
+     * @brief Emitted when the current list of elements change
      */
-    void numElementsChanged();
+    void elementsChanged();
 
     /**
      * @brief Emitted when a new element is added
@@ -130,7 +130,7 @@ signals:
 private:
 
     int size;               ///< Number of elements that can be contained in the buffer
-    QList<QVariant> buffer; ///< Array containing the elements
+    QVariantList buffer;    ///< Array containing the elements
 
 };
 

@@ -40,7 +40,7 @@ void CircularBuffer::setSize(int newSize){
         emit sizeChanged();
 
         if(prevBufferSize != buffer.size())
-            emit numElementsChanged();
+            emit elementsChanged();
     }
 }
 
@@ -51,7 +51,7 @@ void CircularBuffer::clear(){
         emit elementRemoved(buffer.takeLast());
 
     if(prevBufferSize != buffer.size())
-        emit numElementsChanged();
+        emit elementsChanged();
 }
 
 QVariant CircularBuffer::get(int index) const {
@@ -62,20 +62,16 @@ QVariant CircularBuffer::get(int index) const {
 }
 
 void CircularBuffer::add(QVariant const& element){
-    int prevBufferSize = buffer.size();
-
     if(buffer.size() >= size)
         emit elementRemoved(buffer.takeLast());
     buffer.prepend(element);
     emit elementAdded(element);
-
-    if(prevBufferSize != buffer.size())
-        emit numElementsChanged();
+    emit elementsChanged();
 }
 
 void CircularBuffer::remove(int index){
     if(0 <= index && index < buffer.size()){
         emit elementRemoved(buffer.takeAt(index));
-        emit numElementsChanged();
+        emit elementsChanged();
     }
 }
