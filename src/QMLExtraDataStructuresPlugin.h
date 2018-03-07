@@ -28,6 +28,8 @@
 #include <QQmlExtensionPlugin>
 #include <qqml.h>
 
+/** @cond DO_NOT_DOCUMENT */
+
 class QMLExtraDataStructuresPlugin : public QQmlExtensionPlugin {
     /* *INDENT-OFF* */
     Q_OBJECT
@@ -37,5 +39,7 @@ class QMLExtraDataStructuresPlugin : public QQmlExtensionPlugin {
 public:
     void registerTypes(const char* uri);
 };
+
+/** @endcond */
 
 #endif /* QMLEXTRADATASTRUCTURESPLUGIN_H */

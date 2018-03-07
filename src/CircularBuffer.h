@@ -29,14 +29,23 @@
 #include <QHash>
 #include <QSharedPointer>
 
+/**
+ * @brief Limited size buffer that keeps the most recent N elements
+ */
 class CircularBuffer : public QQuickItem {
     /* *INDENT-OFF* */
     Q_OBJECT
     /* *INDENT-ON* */
+
+    /** @brief Size of the buffer */
     Q_PROPERTY(int size READ getSize WRITE setSize NOTIFY sizeChanged)
+
+    /** @brief List of current elements */
     Q_PROPERTY(QVariantList elements READ getElements NOTIFY elementsChanged)
 
 public:
+
+    /** @cond DO_NOT_DOCUMENT */
 
     /**
      * @brief Creates new circular buffer
@@ -71,6 +80,8 @@ public:
      */
     QVariantList getElements() const { return buffer; }
 
+    /** @endcond */
+
 public slots:
 
     /**
@@ -103,6 +114,8 @@ public slots:
 
 signals:
 
+    /** @cond DO_NOT_DOCUMENT */
+
     /**
      * @brief Emitted when the size of the buffer changes
      */
@@ -112,6 +125,8 @@ signals:
      * @brief Emitted when the current list of elements change
      */
     void elementsChanged();
+
+    /** @endcond */
 
     /**
      * @brief Emitted when a new element is added
