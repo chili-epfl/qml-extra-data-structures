@@ -29,13 +29,20 @@
 #include <QHash>
 #include <QSharedPointer>
 
+/**
+ * @brief Associative array, i.e QHash
+ */
 class AssociativeArray : public QQuickItem {
     /* *INDENT-OFF* */
     Q_OBJECT
     /* *INDENT-ON* */
+
+    /** @brief The default value to return if a key is not found */
     Q_PROPERTY(QVariant defaultValue MEMBER defaultValue)
 
 public:
+
+    /** @cond DO_NOT_DOCUMENT */
 
     /**
      * @brief Creates new associative array
@@ -56,6 +63,8 @@ public:
      * @brief Destroys this associative array
      */
     ~AssociativeArray();
+
+    /** @endcond */
 
 public slots:
 

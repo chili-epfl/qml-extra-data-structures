@@ -2,7 +2,7 @@
 
  Members                        | Descriptions                                
 --------------------------------|---------------------------------------------
-`class `[`AssociativeArray`](#classAssociativeArray) | 
+`class `[`AssociativeArray`](#classAssociativeArray) | Associative array, i.e QHash.
 `class `[`CircularBuffer`](#classCircularBuffer) | Limited size buffer that keeps the most recent N elements.
 
 # class `AssociativeArray` 
@@ -12,14 +12,13 @@ class AssociativeArray
   : public QQuickItem
 ```  
 
+Associative array, i.e QHash.
+
 ## Summary
 
  Members                        | Descriptions                                
 --------------------------------|---------------------------------------------
 `{property} QVariant `[`defaultValue`](#classAssociativeArray_1aaf5a91a1d42fd38b8257903923dff7d9) | The default value to return if a key is not found.
-`public  `[`AssociativeArray`](#classAssociativeArray_1a667e8ce8d40d056e1411122424b46e3c)`(QQuickItem * parent)` | Creates new associative array.
-`public  `[`AssociativeArray`](#classAssociativeArray_1aa7128fa4ebcff6eb266bf09344217021)`(QSharedPointer< QHash< QString, QVariant >> existingArray,QQuickItem * parent)` | Creates new associative array with existing internal array.
-`public  `[`~AssociativeArray`](#classAssociativeArray_1ae1f93f3a477623163b57ca45be61bfc9)`()` | Destroys this associative array.
 `{slot} public `[`AssociativeArray`](#classAssociativeArray)` * `[`copy`](#classAssociativeArray_1a800f31b43915fa77989e5884e43b86a7)`()` | Returns a shallow copy of this object.
 `{slot} public void `[`clear`](#classAssociativeArray_1a5d5d2811c46992bb883ed987109cda4b)`()` | Removes all key-value pairs from the array.
 `{slot} public QVariant `[`get`](#classAssociativeArray_1aa19b34889b19e4f299b278ae9b3ece94)`(QString const & key) const` | Gets a value.
@@ -30,26 +29,6 @@ class AssociativeArray
 #### `{property} QVariant `[`defaultValue`](#classAssociativeArray_1aaf5a91a1d42fd38b8257903923dff7d9) 
 
 The default value to return if a key is not found.
-
-#### `public  `[`AssociativeArray`](#classAssociativeArray_1a667e8ce8d40d056e1411122424b46e3c)`(QQuickItem * parent)` 
-
-Creates new associative array.
-
-#### Parameters
-* `parent` The QML parent
-
-#### `public  `[`AssociativeArray`](#classAssociativeArray_1aa7128fa4ebcff6eb266bf09344217021)`(QSharedPointer< QHash< QString, QVariant >> existingArray,QQuickItem * parent)` 
-
-Creates new associative array with existing internal array.
-
-#### Parameters
-* `existingArray` The existing internal array 
-
-* `parent` The QML parent
-
-#### `public  `[`~AssociativeArray`](#classAssociativeArray_1ae1f93f3a477623163b57ca45be61bfc9)`()` 
-
-Destroys this associative array.
 
 #### `{slot} public `[`AssociativeArray`](#classAssociativeArray)` * `[`copy`](#classAssociativeArray_1a800f31b43915fa77989e5884e43b86a7)`()` 
 
