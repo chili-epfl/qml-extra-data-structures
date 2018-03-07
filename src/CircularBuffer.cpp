@@ -24,6 +24,8 @@
 
 #include "CircularBuffer.h"
 
+namespace QMLExtraDataStructures{
+
 CircularBuffer::CircularBuffer(QQuickItem* parent) : QQuickItem(parent){
     size = 1;
 }
@@ -74,4 +76,6 @@ void CircularBuffer::remove(int index){
         emit elementRemoved(buffer.takeAt(index));
         emit elementsChanged();
     }
+}
+
 }

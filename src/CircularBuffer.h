@@ -29,6 +29,8 @@
 #include <QHash>
 #include <QSharedPointer>
 
+namespace QMLExtraDataStructures{
+
 /**
  * @brief Limited size buffer that keeps the most recent N elements
  */
@@ -148,7 +150,8 @@ private:
     QVariantList buffer;    ///< Array containing the elements
 
 };
+}
 
-Q_DECLARE_METATYPE(CircularBuffer*)
+Q_DECLARE_METATYPE(QMLExtraDataStructures::CircularBuffer*)
 
 #endif // CIRCULARBUFFER_H

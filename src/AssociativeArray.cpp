@@ -26,6 +26,8 @@
 
 #include <QQmlEngine>
 
+namespace QMLExtraDataStructures{
+
 AssociativeArray::AssociativeArray(QQuickItem* parent) : QQuickItem(parent){
     array = QSharedPointer<QHash<QString, QVariant>>(new QHash<QString, QVariant>());
 }
@@ -52,4 +54,6 @@ QVariant AssociativeArray::get(QString const& key) const{
 
 void AssociativeArray::set(QString const& key, QVariant const& value){
     array->insert(key, value);
+}
+
 }

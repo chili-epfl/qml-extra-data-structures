@@ -24,17 +24,23 @@
 
 import QtQuick 2.5
 
+/**
+ * @brief Repeater that exposes its items
+ */
 Repeater{
 
     /*
      * Public
      */
 
-    property var items: []  ///< List of items
+    /** type:list Read-only list of items */
+    property var items: []
 
     /*
      * Private
      */
+
+    /** @cond DO_NOT_DOCUMENT */
 
     function updateItemsList(){
         var newItems = [];
@@ -45,4 +51,6 @@ Repeater{
 
     onItemAdded: updateItemsList()
     onItemRemoved: updateItemsList()
+
+    /** @endcond */
 }

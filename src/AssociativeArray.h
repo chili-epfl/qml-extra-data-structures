@@ -29,6 +29,8 @@
 #include <QHash>
 #include <QSharedPointer>
 
+namespace QMLExtraDataStructures{
+
 /**
  * @brief Associative array, i.e QHash
  */
@@ -101,7 +103,8 @@ private:
     QVariant defaultValue;                          ///< The default value to return if a key is not found
 
 };
+}
 
-Q_DECLARE_METATYPE(AssociativeArray*)
+Q_DECLARE_METATYPE(QMLExtraDataStructures::AssociativeArray*)
 
 #endif // ASSOCIATIVEARRAY_H
