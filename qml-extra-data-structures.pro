@@ -25,13 +25,18 @@ SOURCES += \
     src/CircularBuffer.cpp \
     src/AssociativeArray.cpp
 
-OTHER_FILES += qmldir
+OTHER_FILES += qmldir qml.files
 
-#Install plugin library, qmldir
+QML_SOURCES = \
+    src/RepeaterList.qml
+
+#Install plugin library, qmldir, qml sources
 qmldir.files = qmldir
+qml.files = $$QML_SOURCES
 unix {
     installPath = $$[QT_INSTALL_QML]/$$replace(uri, \\., /)
     qmldir.path = $$installPath
+    qml.path = $$installPath
     target.path = $$installPath
-    INSTALLS += target qmldir
+    INSTALLS += target qmldir qml
 }

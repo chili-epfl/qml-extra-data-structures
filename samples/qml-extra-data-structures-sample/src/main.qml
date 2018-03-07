@@ -93,5 +93,34 @@ ApplicationWindow {
                 }
             }
         }
+
+        GroupBox{
+            title: "RepeaterList"
+
+            Row{
+                spacing: 5
+
+                TextField{
+                    placeholderText: "Number of 3's in RepeaterList"
+                    onTextChanged: repeaterList.model = parseInt(text)
+                }
+
+                Text{
+                    text: {
+                        var sum = 0;
+                        for(var i=0;i<repeaterList.items.length;i++)
+                            if(repeaterList.items[i])
+                                sum += repeaterList.items[i].content;
+                        return "Sum of contents: " + sum;
+                    }
+                }
+
+                RepeaterList{
+                    id: repeaterList
+
+                    Item{ property int content: 3 }
+                }
+            }
+        }
     }
 }

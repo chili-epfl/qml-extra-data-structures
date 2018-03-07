@@ -1,2 +1,3 @@
 module QMLExtraDataStructures
+RepeaterList 1.0 RepeaterList.qml
 plugin qmlextradatastructuresplugin
