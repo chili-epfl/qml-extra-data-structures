@@ -75,7 +75,7 @@ public slots:
      *
      * @return Shallow copy with the pointer to the same internal array
      */
-    AssociativeArray* copy();
+    QMLExtraDataStructures::AssociativeArray* copy();
 
     /**
      * @brief Removes all key-value pairs from the array
