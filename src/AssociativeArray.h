@@ -97,6 +97,13 @@ public slots:
      */
     void set(QString const& key, QVariant const& value);
 
+    /**
+     * @brief Returns a list of the keys
+     *
+     * @return List of keys
+     */
+    QList<QString> keys();
+
 private:
 
     QSharedPointer<QHash<QString, QVariant>> array; ///< Pointer to the array containing the key-value pairs
