@@ -97,6 +97,29 @@ public slots:
      */
     void set(QString const& key, QVariant const& value);
 
+    /**
+     * @brief Returns a list of the keys
+     *
+     * @return List of keys
+     */
+    QList<QString> keys() const;
+
+    /**
+     * @brief Deletes a key
+     *
+     * @param key The key
+     * @return True if the key existed, False otherwise
+     */
+    bool del(QString const& key);
+
+    /**
+     * @brief Returns a list of all values
+     *
+     * @return Returns a list containing all the values in the hash, in an arbitrary order
+     */
+    QList<QVariant> values() const;
+
+
 private:
 
     QSharedPointer<QHash<QString, QVariant>> array; ///< Pointer to the array containing the key-value pairs

@@ -56,4 +56,16 @@ void AssociativeArray::set(QString const& key, QVariant const& value){
     array->insert(key, value);
 }
 
+QList<QString> AssociativeArray::keys() const{
+    return array->keys();
+}
+
+bool AssociativeArray::del(const QString &key) {
+    return array->remove(key) > 0;
+}
+
+QList<QVariant> AssociativeArray::values() const {
+    return array->values();
+}
+
 }
