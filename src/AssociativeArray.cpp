@@ -56,7 +56,7 @@ void AssociativeArray::set(QString const& key, QVariant const& value){
     array->insert(key, value);
 }
 
-QList<QString> AssociativeArray::keys() {
+QList<QString> AssociativeArray::keys() const{
     return array->keys();
 }
 

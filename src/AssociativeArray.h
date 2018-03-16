@@ -110,7 +110,7 @@ public slots:
      * @param key The key
      * @return True if the key existed, False otherwise
      */
-    bool del(QString const& key);
+    bool del(QString const& key) const;
 
 private:
 
