@@ -61,9 +61,11 @@ QList<QString> AssociativeArray::keys() const{
 }
 
 bool AssociativeArray::del(const QString &key) {
-
     return array->remove(key) > 0;
+}
 
+QList<QVariant> AssociativeArray::values() const {
+    return array->values();
 }
 
 }

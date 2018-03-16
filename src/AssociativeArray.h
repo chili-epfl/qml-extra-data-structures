@@ -102,7 +102,7 @@ public slots:
      *
      * @return List of keys
      */
-    QList<QString> keys();
+    QList<QString> keys() const;
 
     /**
      * @brief Deletes a key
@@ -110,7 +110,15 @@ public slots:
      * @param key The key
      * @return True if the key existed, False otherwise
      */
-    bool del(QString const& key) const;
+    bool del(QString const& key);
+
+    /**
+     * @brief Returns a list of all values
+     *
+     * @return Returns a list containing all the values in the hash, in an arbitrary order
+     */
+    QList<QVariant> values() const;
+
 
 private:
 
