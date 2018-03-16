@@ -3,6 +3,7 @@
  Members                        | Descriptions                                
 --------------------------------|---------------------------------------------
 `namespace `[`QMLExtraDataStructures`](#namespaceQMLExtraDataStructures) | QML data structures and utilities that are either useful or are missing an official QML API.
+`class `[`RepeaterList`](#classRepeaterList) | Repeater that exposes its items.
 
 # namespace `QMLExtraDataStructures` 
 
@@ -14,7 +15,6 @@ QML data structures and utilities that are either useful or are missing an offic
 --------------------------------|---------------------------------------------
 `class `[`QMLExtraDataStructures::AssociativeArray`](#classQMLExtraDataStructures_1_1AssociativeArray) | Associative array, i.e QHash.
 `class `[`QMLExtraDataStructures::CircularBuffer`](#classQMLExtraDataStructures_1_1CircularBuffer) | Limited size buffer that keeps the most recent N elements.
-`class `[`QMLExtraDataStructures::RepeaterList`](#classQMLExtraDataStructures_1_1RepeaterList) | Repeater that exposes its items.
 
 # class `QMLExtraDataStructures::AssociativeArray` 
 
@@ -30,10 +30,13 @@ Associative array, i.e QHash.
  Members                        | Descriptions                                
 --------------------------------|---------------------------------------------
 `{property} QVariant `[`defaultValue`](#classQMLExtraDataStructures_1_1AssociativeArray_1a4751d5b183e712fdc723552655816c55) | The default value to return if a key is not found.
-`{slot} public `[`AssociativeArray`](#classQMLExtraDataStructures_1_1AssociativeArray)` * `[`copy`](#classQMLExtraDataStructures_1_1AssociativeArray_1a1ceb05283fcf934e695fc4164dc758b2)`()` | Returns a shallow copy of this object.
+`{slot} public `[`QMLExtraDataStructures::AssociativeArray`](#classQMLExtraDataStructures_1_1AssociativeArray)` * `[`copy`](#classQMLExtraDataStructures_1_1AssociativeArray_1a1ceb05283fcf934e695fc4164dc758b2)`()` | Returns a shallow copy of this object.
 `{slot} public void `[`clear`](#classQMLExtraDataStructures_1_1AssociativeArray_1a58581bd8fda01852e2fa773a7d8ed6ca)`()` | Removes all key-value pairs from the array.
-`{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1AssociativeArray_1a7ab7d31cdd6e0f2bd7e647733e33a166)`(QString const & key) const` | Gets a value.
+`{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1AssociativeArray_1ac25d41a948a1a40de4fe8d29a2f5494a)`(QString const & key) const` | Gets a value.
 `{slot} public void `[`set`](#classQMLExtraDataStructures_1_1AssociativeArray_1abf679242ca149a0f392b1da6b64e00ee)`(QString const & key,QVariant const & value)` | Sets a key-value pair.
+`{slot} public QList< QString > `[`keys`](#classQMLExtraDataStructures_1_1AssociativeArray_1a645daa0a666d7d8e81d7eca789b4911a)`() const` | Returns a list of the keys.
+`{slot} public bool `[`del`](#classQMLExtraDataStructures_1_1AssociativeArray_1a8389e7e812b5d8fc8c0af72e817296e5)`(QString const & key)` | Deletes a key.
+`{slot} public QList< QVariant > `[`values`](#classQMLExtraDataStructures_1_1AssociativeArray_1a28c51a0614480bd37ea9874f38bbcaa4)`() const` | Returns a list of all values.
 
 ## Members
 
@@ -41,7 +44,7 @@ Associative array, i.e QHash.
 
 The default value to return if a key is not found.
 
-#### `{slot} public `[`AssociativeArray`](#classQMLExtraDataStructures_1_1AssociativeArray)` * `[`copy`](#classQMLExtraDataStructures_1_1AssociativeArray_1a1ceb05283fcf934e695fc4164dc758b2)`()` 
+#### `{slot} public `[`QMLExtraDataStructures::AssociativeArray`](#classQMLExtraDataStructures_1_1AssociativeArray)` * `[`copy`](#classQMLExtraDataStructures_1_1AssociativeArray_1a1ceb05283fcf934e695fc4164dc758b2)`()` 
 
 Returns a shallow copy of this object.
 
@@ -52,7 +55,7 @@ Shallow copy with the pointer to the same internal array
 
 Removes all key-value pairs from the array.
 
-#### `{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1AssociativeArray_1a7ab7d31cdd6e0f2bd7e647733e33a166)`(QString const & key) const` 
+#### `{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1AssociativeArray_1ac25d41a948a1a40de4fe8d29a2f5494a)`(QString const & key) const` 
 
 Gets a value.
 
@@ -67,6 +70,30 @@ Sets a key-value pair.
 * `key` The key 
 
 * `value` The associated value
+
+#### `{slot} public QList< QString > `[`keys`](#classQMLExtraDataStructures_1_1AssociativeArray_1a645daa0a666d7d8e81d7eca789b4911a)`() const` 
+
+Returns a list of the keys.
+
+#### Returns
+List of keys
+
+#### `{slot} public bool `[`del`](#classQMLExtraDataStructures_1_1AssociativeArray_1a8389e7e812b5d8fc8c0af72e817296e5)`(QString const & key)` 
+
+Deletes a key.
+
+#### Parameters
+* `key` The key 
+
+#### Returns
+True if the key existed, False otherwise
+
+#### `{slot} public QList< QVariant > `[`values`](#classQMLExtraDataStructures_1_1AssociativeArray_1a28c51a0614480bd37ea9874f38bbcaa4)`() const` 
+
+Returns a list of all values.
+
+#### Returns
+Returns a list containing all the values in the hash, in an arbitrary order
 
 # class `QMLExtraDataStructures::CircularBuffer` 
 
@@ -86,7 +113,7 @@ Limited size buffer that keeps the most recent N elements.
 `{signal} public void `[`elementAdded`](#classQMLExtraDataStructures_1_1CircularBuffer_1ab5d4bfbfc7e7bf84679d89e98d1bd407)`(QVariant const & element)` | Emitted when a new element is added.
 `{signal} public void `[`elementRemoved`](#classQMLExtraDataStructures_1_1CircularBuffer_1aed587ec80926423faa02d7a09ecf6d35)`(QVariant const & element)` | Emitted when an element is removed, possibly due to buffer being full.
 `{slot} public void `[`clear`](#classQMLExtraDataStructures_1_1CircularBuffer_1aa53f1d60dbff4255fdbc0707af863c76)`()` | Removes all elements from the buffer.
-`{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1CircularBuffer_1a93e9e667ad32b167478cc9699d578519)`(int index) const` | Gets the element at the given index, 0 is tail, size - 1 is head.
+`{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1CircularBuffer_1a743197c9d839a1e708c99514ea485c6a)`(int index) const` | Gets the element at the given index, 0 is tail, size - 1 is head.
 `{slot} public void `[`add`](#classQMLExtraDataStructures_1_1CircularBuffer_1a75b14d6428efa319cf60f0c16ce20571)`(QVariant const & element)` | Adds the given element to the head, removing an element from the tail if buffer is full.
 `{slot} public void `[`remove`](#classQMLExtraDataStructures_1_1CircularBuffer_1ac098d03930bbeefc2a5bd2f8898fd239)`(int index)` | Removes the element at the given index.
 
@@ -120,7 +147,7 @@ Emitted when an element is removed, possibly due to buffer being full.
 
 Removes all elements from the buffer.
 
-#### `{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1CircularBuffer_1a93e9e667ad32b167478cc9699d578519)`(int index) const` 
+#### `{slot} public QVariant `[`get`](#classQMLExtraDataStructures_1_1CircularBuffer_1a743197c9d839a1e708c99514ea485c6a)`(int index) const` 
 
 Gets the element at the given index, 0 is tail, size - 1 is head.
 
@@ -144,10 +171,10 @@ Removes the element at the given index.
 #### Parameters
 * `index` Index of the element to remove, does nothing if out of bounds
 
-# class `QMLExtraDataStructures::RepeaterList` 
+# class `RepeaterList` 
 
 ```
-class QMLExtraDataStructures::RepeaterList
+class RepeaterList
   : public Repeater
 ```  
 
@@ -157,11 +184,11 @@ Repeater that exposes its items.
 
  Members                        | Descriptions                                
 --------------------------------|---------------------------------------------
-`{property} list `[`items`](#classQMLExtraDataStructures_1_1RepeaterList_1ad0ff139e61849ed074b54fc3783f8af3) | Read-only list of items
+`{property} list `[`items`](#classRepeaterList_1ab7be20ea52e0ea32fae0e6e628773991) | Read-only list of items
 
 ## Members
 
-#### `{property} list `[`items`](#classQMLExtraDataStructures_1_1RepeaterList_1ad0ff139e61849ed074b54fc3783f8af3) 
+#### `{property} list `[`items`](#classRepeaterList_1ab7be20ea52e0ea32fae0e6e628773991) 
 
 Read-only list of items
 
