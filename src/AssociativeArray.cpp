@@ -60,4 +60,15 @@ QList<QString> AssociativeArray::keys() {
     return array->keys();
 }
 
+bool AssociativeArray::del(const QString &key) {
+
+    if(array->contains(key)) {
+        array->remove(key);
+        return true;
+    }
+
+    return false;
+
+}
+
 }

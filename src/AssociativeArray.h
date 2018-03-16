@@ -104,6 +104,14 @@ public slots:
      */
     QList<QString> keys();
 
+    /**
+     * @brief Deletes a key
+     *
+     * @param key The key
+     * @return True if the key existed, False otherwise
+     */
+    bool del(QString const& key);
+
 private:
 
     QSharedPointer<QHash<QString, QVariant>> array; ///< Pointer to the array containing the key-value pairs
