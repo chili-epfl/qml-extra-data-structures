@@ -62,7 +62,7 @@ QList<QString> AssociativeArray::keys() const{
 
 bool AssociativeArray::del(const QString &key) {
 
-    return array->remove(key) > 0
+    return array->remove(key) > 0;
 
 }
 
