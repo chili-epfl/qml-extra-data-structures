@@ -6,11 +6,13 @@ CONFIG -= android_install
 
 QT += qml quick
 
-QMAKE_CXXFLAGS -= -O2
-QMAKE_CXXFLAGS_RELEASE -= -O2
+unix{
+    QMAKE_CXXFLAGS -= -O2
+    QMAKE_CXXFLAGS_RELEASE -= -O2
 
-QMAKE_CXXFLAGS += -O3
-QMAKE_CXXFLAGS_RELEASE += -O3
+    QMAKE_CXXFLAGS += -O3
+    QMAKE_CXXFLAGS_RELEASE += -O3
+}
 
 TARGET = $$qtLibraryTarget($$TARGET)
 uri = QMLExtraDataStructures
@@ -33,10 +35,8 @@ QML_SOURCES = \
 #Install plugin library, qmldir, qml sources
 qmldir.files = qmldir
 qml.files = $$QML_SOURCES
-unix {
-    installPath = $$[QT_INSTALL_QML]/$$replace(uri, \\., /)
-    qmldir.path = $$installPath
-    qml.path = $$installPath
-    target.path = $$installPath
-    INSTALLS += target qmldir qml
-}
+installPath = $$[QT_INSTALL_QML]/$$replace(uri, \\., /)
+qmldir.path = $$installPath
+qml.path = $$installPath
+target.path = $$installPath
+INSTALLS += target qmldir qml
