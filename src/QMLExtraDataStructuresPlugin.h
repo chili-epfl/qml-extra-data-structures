@@ -16,6 +16,12 @@
  */
 
 /**
+ * @mainpage qml-extra-data-structures
+ *
+ * QML data structures and utilities that are either useful or are missing an official QML API. See README.md for more information.
+ */
+
+/**
  * @file QMLExtraDataStructuresPlugin.h
  * @brief Object that exposes the QMLExtraDataStructures plugin components as QML objects
  * @author Ayberk Özgür
