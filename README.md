@@ -2,30 +2,65 @@ qml-extra-data-structures
 =========================
 
 QML data structures and utilities that are either useful or are missing an official QML API.
-It is tested with Qt 5.10.0 on the following:
+It is tested with Qt 5.10.1 on the following:
 
-  - Ubuntu 17.10
-  - ~~Android 6.0.1 (arm-v7) built with SDK API 23 and NDK r10e on Ubuntu 17.10 host~~ Not yet
+- Ubuntu 17.10
+- macOS 10.13.3 with Xcode 9.3
+- Windows 10 (UWP x64 (MSVC 2017)) with Visual Studio 2017 Community (with `Universal Windows Platform development` and `C++ Universal Windows Platform tools`)
+- Android 7.1.2 with Ubuntu 17.10 host with Android API 23, Android SDK Tools 25.2.5 and Android NDK r10e
 
 See [samples/](samples/) for example uses.
 
-See [DOCUMENTATION.md](DOCUMENTATION.md) for the API.
+See [doc/index.html](doc/index.html) for the API.
 
-build
------
+build [Linux & macOS]
+---------------------
 
 ```
-    $ mkdir build && cd build
-    $ qmake ..
-    $ make install
+  $ mkdir build && cd build
+  $ qt-install-dir/qt-version/target-platform/bin/qmake ..
+  $ make install
 ```
 
-This will install the QML plugin inside the Qt sysroot. **Be aware that this is not a sandboxed installation.**
+This will install the QML plugin inside the Qt sysroot, which you must have write access to. **Be aware that this is not a sandboxed installation.**
+
+build [Android]
+---------------
+
+```
+  $ export ANDROID_NDK_ROOT=/path-to-android-ndk/
+  $ mkdir build && cd build
+  $ qt-install-dir/qt-version/target-platform/bin/qmake ..
+  $ make install
+```
+
+This will install the QML plugin inside the Qt sysroot, which you must have write access to. **Be aware that this is not a sandboxed installation.**
+
+build [Windows]
+---------------
+
+Run the following in the `Developer Command Prompt for VS 2017`:
+
+```
+  > "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
+  > mkdir build
+  > cd build
+  > qt-install-root\qt-version\target-platform\bin\qmake ..
+  > nmake
+  > nmake install
+```
+
+This will install the QML plugin inside the Qt sysroot, which you must have write access to. **Be aware that this is not a sandboxed installation.**
 
 build documentation
 -------------------
 
+Install dependencies:
 ```
-    $ doxygen
-    $ moxygen --output DOCUMENTATION.md xml
+  $ apt install doxygen doxyqml
+```
+
+Then, generate the documentation:
+```
+  $ doxygen
 ```
