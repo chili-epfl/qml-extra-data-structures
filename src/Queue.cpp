@@ -28,7 +28,6 @@
 
 namespace QMLExtraDataStructures {
 Queue::Queue(QQuickItem *parent) : QQuickItem(parent) {
-    queue = QQueue<QVariant>();
 }
 
 void Queue::clear() {
