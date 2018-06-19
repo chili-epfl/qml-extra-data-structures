@@ -16,27 +16,37 @@
  */
 
 /**
- * @file QMLExtraDataStructuresPlugin.h
- * @brief Object that exposes the QMLExtraDataStructures plugin components as QML objects
- * @author Ayberk Özgür
- * @date 2018-03-06
+ * @file AssociativeArray.cpp
+ * @brief Source for a QML-enabled associative array, i.e QHash
+ * @author Julien Grondier
+ * @date 2018-04-19
  */
 
-#include "QMLExtraDataStructuresPlugin.h"
 
-#include "CircularBuffer.h"
-#include "AssociativeArray.h"
 #include "Queue.h"
 
-/**
- * @brief QML data structures and utilities that are either useful or are missing an official QML API
- */
-namespace QMLExtraDataStructures{
 
-void QMLExtraDataStructuresPlugin::registerTypes(const char* uri){
-    qmlRegisterType<CircularBuffer>(uri, 1, 0, "CircularBuffer");
-    qmlRegisterType<AssociativeArray>(uri, 1, 0, "AssociativeArray");
-    qmlRegisterType<Queue>(uri, 1, 0, "Queue");
+namespace QMLExtraDataStructures {
+Queue::Queue(QQuickItem *parent) : QQuickItem(parent) {
+}
+
+void Queue::clear() {
+    queue.clear();
+}
+
+QVariant Queue::dequeue() {
+    if (!queue.isEmpty()) return queue.dequeue();
+    return invalid;
+}
+
+void Queue::enqueue(QVariant const &t) {
+    queue.enqueue(t);
+}
+
+QVariant Queue::head()
+{
+    if (!queue.isEmpty()) return queue.head();
+    return invalid;
 }
 
 }
