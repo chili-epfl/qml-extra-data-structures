@@ -32,7 +32,7 @@ Queue::Queue(QQuickItem *parent) : QQuickItem(parent) {
 }
 
 void Queue::clear() {
-    queue = QQueue<QVariant>();
+    queue.clear();
 }
 
 QVariant Queue::dequeue() {
