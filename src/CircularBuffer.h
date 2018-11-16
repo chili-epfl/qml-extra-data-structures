@@ -144,7 +144,7 @@ signals:
      */
     void elementRemoved(QVariant const& element);
 
-private:
+protected:
 
     int size;               ///< Number of elements that can be contained in the buffer
     QVariantList buffer;    ///< Array containing the elements

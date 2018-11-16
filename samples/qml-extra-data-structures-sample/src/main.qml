@@ -95,6 +95,47 @@ ApplicationWindow {
         }
 
         GroupBox{
+            title: "StatCircularBuffer"
+
+            Row{
+                spacing: 5
+
+                TextField{
+                    id: realElement
+                    placeholderText: "Real number"
+                }
+
+                Button{
+                    text: "Add"
+                    onClicked: statCircularBuffer.add(parseFloat(realElement.text))
+                }
+
+                Button{
+                    text: "Remove Last"
+                    onClicked: statCircularBuffer.remove(statCircularBuffer.elements.length - 1)
+                }
+
+                Button{
+                    text: "Clear"
+                    onClicked: statCircularBuffer.clear()
+                }
+
+                Column{
+                    Text{ text: "Contents: [" + statCircularBuffer.elements + "]" }
+
+                    Text{
+                        text: "Mean = " + statCircularBuffer.mean + ", stdev = " + statCircularBuffer.stdev + ", min = " + statCircularBuffer.min + ", max = " + statCircularBuffer.max
+                    }
+                }
+
+                StatCircularBuffer{
+                    id: statCircularBuffer
+                    size: 5
+                }
+            }
+        }
+
+        GroupBox{
             title: "RepeaterList"
 
             Row{

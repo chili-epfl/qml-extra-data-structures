@@ -20,11 +20,13 @@ uri = QMLExtraDataStructures
 HEADERS += \
     src/QMLExtraDataStructuresPlugin.h \
     src/CircularBuffer.h \
+    src/StatCircularBuffer.h \
     src/AssociativeArray.h
 
 SOURCES += \
     src/QMLExtraDataStructuresPlugin.cpp \
     src/CircularBuffer.cpp \
+    src/StatCircularBuffer.cpp \
     src/AssociativeArray.cpp
 
 OTHER_FILES += qmldir qml.files

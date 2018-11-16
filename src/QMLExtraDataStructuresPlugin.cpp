@@ -25,6 +25,7 @@
 #include "QMLExtraDataStructuresPlugin.h"
 
 #include "CircularBuffer.h"
+#include "StatCircularBuffer.h"
 #include "AssociativeArray.h"
 
 /**
@@ -34,6 +35,7 @@ namespace QMLExtraDataStructures{
 
 void QMLExtraDataStructuresPlugin::registerTypes(const char* uri){
     qmlRegisterType<CircularBuffer>(uri, 1, 0, "CircularBuffer");
+    qmlRegisterType<StatCircularBuffer>(uri, 1, 0, "StatCircularBuffer");
     qmlRegisterType<AssociativeArray>(uri, 1, 0, "AssociativeArray");
 }
 
