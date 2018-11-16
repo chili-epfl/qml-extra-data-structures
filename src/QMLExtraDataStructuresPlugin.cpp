@@ -27,6 +27,7 @@
 #include "CircularBuffer.h"
 #include "StatCircularBuffer.h"
 #include "AssociativeArray.h"
+#include "Queue.h"
 
 /**
  * @brief QML data structures and utilities that are either useful or are missing an official QML API
@@ -37,6 +38,7 @@ void QMLExtraDataStructuresPlugin::registerTypes(const char* uri){
     qmlRegisterType<CircularBuffer>(uri, 1, 0, "CircularBuffer");
     qmlRegisterType<StatCircularBuffer>(uri, 1, 0, "StatCircularBuffer");
     qmlRegisterType<AssociativeArray>(uri, 1, 0, "AssociativeArray");
+    qmlRegisterType<Queue>(uri, 1, 0, "Queue");
 }
 
 }

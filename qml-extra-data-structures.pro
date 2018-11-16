@@ -21,13 +21,15 @@ HEADERS += \
     src/QMLExtraDataStructuresPlugin.h \
     src/CircularBuffer.h \
     src/StatCircularBuffer.h \
-    src/AssociativeArray.h
+    src/AssociativeArray.h \
+    src/Queue.h
 
 SOURCES += \
     src/QMLExtraDataStructuresPlugin.cpp \
     src/CircularBuffer.cpp \
     src/StatCircularBuffer.cpp \
-    src/AssociativeArray.cpp
+    src/AssociativeArray.cpp \
+    src/Queue.cpp
 
 OTHER_FILES += qmldir qml.files
 
