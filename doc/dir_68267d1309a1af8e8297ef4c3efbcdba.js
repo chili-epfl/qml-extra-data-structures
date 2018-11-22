@@ -9,7 +9,11 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
       [ "CircularBuffer", "classQMLExtraDataStructures_1_1CircularBuffer.html", "classQMLExtraDataStructures_1_1CircularBuffer" ]
     ] ],
     [ "QMLExtraDataStructuresPlugin.h", "QMLExtraDataStructuresPlugin_8h.html", null ],
+    [ "Queue.h", "Queue_8h.html", null ],
     [ "RepeaterList.qml", "RepeaterList_8qml.html", [
       [ "RepeaterList", "classQMLExtraDataStructures_1_1RepeaterList.html", "classQMLExtraDataStructures_1_1RepeaterList" ]
+    ] ],
+    [ "StatCircularBuffer.h", "StatCircularBuffer_8h.html", [
+      [ "StatCircularBuffer", "classQMLExtraDataStructures_1_1StatCircularBuffer.html", "classQMLExtraDataStructures_1_1StatCircularBuffer" ]
     ] ]
 ];

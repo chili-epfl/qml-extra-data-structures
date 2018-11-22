@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['set',['set',['../classQMLExtraDataStructures_1_1AssociativeArray.html#abf679242ca149a0f392b1da6b64e00ee',1,'QMLExtraDataStructures::AssociativeArray']]],
-  ['size',['size',['../classQMLExtraDataStructures_1_1CircularBuffer.html#ad3fe0831f3d5061b0fa0f58b18ed6a51',1,'QMLExtraDataStructures::CircularBuffer']]]
+  ['remove',['remove',['../classQMLExtraDataStructures_1_1CircularBuffer.html#ac098d03930bbeefc2a5bd2f8898fd239',1,'QMLExtraDataStructures::CircularBuffer']]],
+  ['repeaterlist',['RepeaterList',['../classQMLExtraDataStructures_1_1RepeaterList.html',1,'QMLExtraDataStructures']]],
+  ['repeaterlist_2eqml',['RepeaterList.qml',['../RepeaterList_8qml.html',1,'']]]
 ];

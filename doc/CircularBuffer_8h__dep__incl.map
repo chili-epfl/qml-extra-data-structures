@@ -1,3 +1,4 @@
 <map id="src/CircularBuffer.h" name="src/CircularBuffer.h">
 <area shape="rect" id="node2" href="$CircularBuffer_8cpp.html" title="Source for a QML&#45;enabled circular buffer. " alt="" coords="5,80,155,107"/>
+<area shape="rect" id="node3" href="$StatCircularBuffer_8h.html" title="Source for a QML&#45;enabled circular buffer with statistics calculations, e.g mean, stdev, min, max. " alt="" coords="179,80,338,107"/>
 </map>

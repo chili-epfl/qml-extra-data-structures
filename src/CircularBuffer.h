@@ -146,8 +146,12 @@ signals:
 
 protected:
 
+    /** @cond DO_NOT_DOCUMENT */
+
     int size;               ///< Number of elements that can be contained in the buffer
     QVariantList buffer;    ///< Array containing the elements
+
+    /** @endcond */
 
 };
 }
